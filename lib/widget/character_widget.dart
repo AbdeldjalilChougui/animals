@@ -1,5 +1,6 @@
 import 'package:animals_app/pages/character_detail_screen.dart';
 import 'package:animals_app/styleguide.dart';
+import 'package:animals_app/widget/clipper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../models/character.dart';
@@ -24,7 +25,7 @@ class _CharacterWidgetState extends State<CharacterWidget>{
     return InkWell(
       onTap: () {
         Navigator.of(context).push(PageRouteBuilder(
-          transitionDuration: Duration(milliseconds: 350),
+          transitionDuration: const Duration(milliseconds: 350),
           pageBuilder: (context,_,__) => CharacterDetailScreen(widget.character!),
         ));
       },
@@ -59,7 +60,7 @@ class _CharacterWidgetState extends State<CharacterWidget>{
                 ),
               ),
               Align(
-                alignment: Alignment(0,0),
+                alignment: const Alignment(0,0),
                 child: Hero(
                   tag: "image${widget.character!.name}",
                   child: Image.asset(
@@ -92,30 +93,5 @@ class _CharacterWidgetState extends State<CharacterWidget>{
         },
       ),
     );
-  }
-}
-
-class CharacterCardBGClipper extends CustomClipper<Path>{
-  @override
-  Path getClip(Size size) {
-    Path p = Path();
-    double curveDistance = 40;
-
-    p.moveTo(0,size.height * 0.4);
-    p.lineTo(0, size.height - curveDistance);
-    p.quadraticBezierTo(1, size.height - 1, curveDistance, size.height);
-    p.lineTo(size.width - curveDistance, size.height);
-    p.quadraticBezierTo(size.width + 1, size.height - 1, size.width, size.height - curveDistance);
-    p.lineTo(size.width, 0 + curveDistance);
-    p.quadraticBezierTo(size.width - 1, 0, size.width - curveDistance - 5, 0 + curveDistance / 3);
-    p.lineTo(curveDistance, size.height * 0.29);
-    p.quadraticBezierTo(1, (size.height * 0.3) + 10, 0, size.height * 0.4);
-
-    return p;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
   }
 }
