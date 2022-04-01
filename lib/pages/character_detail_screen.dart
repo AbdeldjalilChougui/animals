@@ -194,7 +194,7 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> with Afte
             child: VideoPlayer(videoController!),
           ): Container(),
         ),
-        RaisedButton(
+        ElevatedButton(
           onPressed: () {
             setState(() {
               videoController!.value.isPlaying ? videoController!.pause() : videoController!.play();
