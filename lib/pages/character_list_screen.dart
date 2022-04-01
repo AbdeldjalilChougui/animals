@@ -29,10 +29,10 @@ class _CharacterListScreenState extends State<CharacterListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios, size: 0,),
+        leading: const Icon(Icons.arrow_back_ios, size: 0,),
         actions: <Widget>[
           AnimatedContainer(
-            duration: Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 500),
             curve: Curves.decelerate,
             width: textFieldHeghit,
             transform: Matrix4.translationValues(0, 1, 0),
@@ -47,7 +47,7 @@ class _CharacterListScreenState extends State<CharacterListScreen> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.only(right: 16),
             child: IconButton(
               onPressed: () {
                 setState(() {
@@ -55,7 +55,7 @@ class _CharacterListScreenState extends State<CharacterListScreen> {
                   isSearchOn ? textFieldHeghit = 200 : textFieldHeghit = 0;
                 });
               },
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
             ),
           ),
         ],
@@ -69,7 +69,7 @@ class _CharacterListScreenState extends State<CharacterListScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 32, top: 8),
                 child: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                     children: [
                       TextSpan(text: "Animals Kingdom", style: display1,),
                       TextSpan(text: "\n"),
