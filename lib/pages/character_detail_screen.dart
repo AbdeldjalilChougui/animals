@@ -74,14 +74,14 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> with Afte
               ),
             ),
             SingleChildScrollView(
-              padding: EdgeInsets.only(bottom: 80),
+              padding: const EdgeInsets.only(bottom: 80),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.only(top: 8, left: 10),
                     child: IconButton(
-                      icon: Icon(Icons.close),
+                      icon: const Icon(Icons.close),
                       iconSize: 40,
                       color: Colors.white.withOpacity(0.9),
                       onPressed: () {
@@ -104,26 +104,26 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> with Afte
                       child: Material(
                         color: Colors.transparent,
                         child: Container(
-                          child: Text(widget.character.name!,style: heading,),
+                          child: Text(widget.character.name!,style: kHeading,),
                         ),
                       ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(32,8,8,16),
-                    child: Text(widget.character.description!,style: subHeading,),
+                    child: Text(widget.character.description!,style: kSubHeading,),
                   ),
                 ],
               ),
             ),
             AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               curve: Curves.decelerate,
               bottom: currentBottom,
               left: 0,
               right: 0,
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40),
@@ -142,9 +142,9 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> with Afte
                       },
                       child: Container(
                         alignment: Alignment.center,
-                        padding: EdgeInsets.symmetric(horizontal: 32),
+                        padding: const EdgeInsets.symmetric(horizontal: 32),
                         height: 80,
-                        child: Text("Clips",style: subHeading.copyWith(color: Colors.black54),),
+                        child: Text("Clips",style: kSubHeading.copyWith(color: Colors.black54),),
                       ),
                     ),
                     SingleChildScrollView(
@@ -164,11 +164,11 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> with Afte
   Widget clipsWidget () {
     return Container(
       height: 250,
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         children: <Widget>[
           wholeColumn(colors[0], colors[1]),
-          SizedBox(width: 15,),
+          const SizedBox(width: 15,),
         ],
       ),
     );
@@ -180,7 +180,7 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> with Afte
       width: 100,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.all(Radius.circular(20)),
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
       ),
     );
   }
@@ -210,7 +210,7 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> with Afte
 
   @override
   void afterFirstLayout(BuildContext context) {
-    Future.delayed(Duration(milliseconds: 500), () {
+    Future.delayed(const Duration(milliseconds: 500), () {
       setState(() {
         isCollapsed = true;
         currentBottom = widget.collapsedBottom;
