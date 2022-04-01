@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const TextStyle display1 = TextStyle(
+const TextStyle kDisplay1 = TextStyle(
   fontFamily: "WorkSans",
   color: Colors.black,
   fontSize: 38,
@@ -8,7 +8,7 @@ const TextStyle display1 = TextStyle(
   letterSpacing: 1.2,
 );
 
-const TextStyle display2 = TextStyle(
+const TextStyle kDisplay2 = TextStyle(
   fontFamily: "WorkSans",
   color: Colors.black,
   fontSize: 32,
@@ -16,7 +16,7 @@ const TextStyle display2 = TextStyle(
   letterSpacing: 1.1,
 );
 
-final TextStyle heading = TextStyle(
+final TextStyle kHeading = TextStyle(
   fontFamily: "WorkSans",
   color: Colors.white.withOpacity(0.8),
   fontSize: 34,
@@ -24,7 +24,7 @@ final TextStyle heading = TextStyle(
   letterSpacing: 1.2,
 );
 
-final TextStyle subHeading = TextStyle(
+final TextStyle kSubHeading = TextStyle(
   inherit: true,
   fontFamily: "WorkSans",
   color: Colors.white.withOpacity(0.8),
