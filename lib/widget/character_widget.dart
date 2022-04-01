@@ -80,11 +80,11 @@ class _CharacterWidgetState extends State<CharacterWidget>{
                       child: Material(
                         color: Colors.transparent,
                         child: Container(
-                          child: Text(widget.character!.name!,style: heading,),
+                          child: Text(widget.character!.name!,style: kHeading,),
                         ),
                       ),
                     ),
-                    Text("Tap to read more", style: subHeading,),
+                    Text("Tap to read more", style: kSubHeading,),
                   ],
                 ),
               )
