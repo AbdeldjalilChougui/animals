@@ -71,9 +71,9 @@ class _CharacterListScreenState extends State<CharacterListScreen> {
                 child: RichText(
                   text: const TextSpan(
                     children: [
-                      TextSpan(text: "Animals Kingdom", style: display1,),
+                      TextSpan(text: "Animals Kingdom", style: kDisplay1,),
                       TextSpan(text: "\n"),
-                      TextSpan(text: "Characters", style: display2,),
+                      TextSpan(text: "Characters", style: kDisplay2,),
                     ],
                   ),
                 ),
