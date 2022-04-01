@@ -36,7 +36,7 @@ class _CharacterListScreenState extends State<CharacterListScreen> {
             curve: Curves.decelerate,
             width: textFieldHeghit,
             transform: Matrix4.translationValues(0, 1, 0),
-            child: TextField(
+            child: const TextField(
               style: TextStyle(
                 fontSize: 25,
                 color: Colors.blue,
@@ -81,9 +81,9 @@ class _CharacterListScreenState extends State<CharacterListScreen> {
               Expanded(
                 child: PageView(
                   controller: _pageController,
-                  physics: ClampingScrollPhysics(),
+                  physics: const ClampingScrollPhysics(),
                   children:
-                    Characters(),
+                    charactersItems(),
                 )
               ),
             ],
@@ -93,11 +93,13 @@ class _CharacterListScreenState extends State<CharacterListScreen> {
     );
   }
 
-  Characters() {
+  charactersItems() {
     List<Widget> list  = [];
-    for(var i = 0;i < characters.length; i++)
-      list.add(CharacterWidget(character: characters[i],pageController: _pageController!,currentPage: i,));
-
+    for(var i = 0;i < characters.length; i++) {
+      list.add(CharacterWidget(character: characters[i],
+        pageController: _pageController!,
+        currentPage: i,));
+    }
     return list;
   }
 }
